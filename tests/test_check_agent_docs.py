@@ -212,6 +212,7 @@ class PathChecks(unittest.TestCase):
         self.assertTrue(f.note.startswith(check_agent_docs.ELSEWHERE))
         self.assertEqual(status_of(fs, "examples/"), "missing")
 
+    @unittest.skipIf(check_agent_docs.tomllib is None, "needs Python 3.11+ (tomllib)")
     def test_mise_tasks(self):
         text = "```\nmise run build\nmise run test:python   # Python unit tests via tox\nmise run gone\nmise run lint\n```\n"
         root = make_repo({"CLAUDE.md": text, "src/a.ts": "",
@@ -657,7 +658,7 @@ class Robustness(unittest.TestCase):
     def test_lone_cr_keeps_lines_consistent_for_fix(self):
         root = make_repo({"CLAUDE.md": "Intro\rmore\nUse `app/old/database_client.py`\n", "app/db/database_client.py": ""})
         r = run_cli(root, "--no-llm", "--fix")
-        self.assertIn("app/db/database_client.py", (root / "CLAUDE.md").read_text(newline=""))
+        self.assertIn("app/db/database_client.py", (root / "CLAUDE.md").read_bytes().decode("utf-8"))
 
     def test_inline_triple_backticks_do_not_open_a_fence(self):
         root = make_repo({"CLAUDE.md": "```pnpm install``` first.\nThen `src/gone_module.py`.\n", "src/keep.ts": ""})
