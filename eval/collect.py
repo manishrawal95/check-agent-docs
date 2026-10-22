@@ -1,6 +1,6 @@
-"""Turn reviewer answers into the issues ctxlint would report, and build verification inputs.
+"""Turn reviewer answers into the issues check-agent-docs would report, and build verification inputs.
 
-Usage: python3 eval/collect.py <frozen ctxlint.py> <repos_dir> <out_dir> <answers.jsonl>...
+Usage: python3 eval/collect.py <frozen check_agent_docs.py> <repos_dir> <out_dir> <answers.jsonl>...
 answers lines: {"packet": "<packet path>", "issues": [...]}. Every packet in review_list.txt must be answered.
 Writes <out_dir>/review_issues.json and verify_review.jsonl / verify_factsonly.jsonl (inputs for prompts/VERIFY_PROMPT.md).
 """

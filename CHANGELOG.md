@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0 (2026-10-22)
+
+- Renamed from ctxlint to check-agent-docs: the command, the Python module (`check_agent_docs.py`), the plugin (`/check-agent-docs:check`), the disable comments (`<!-- check-agent-docs-disable-next-line -->`) and the environment variables (`CHECK_AGENT_DOCS_MODEL`, `CHECK_AGENT_DOCS_CACHE_DIR`, `CHECK_AGENT_DOCS_RETRY_BASE`). The old `ctxlint-disable` comments are no longer read.
+- Review packets name the new tool, so `PROMPT_VERSION` is 8 and earlier cached reviews are not reused.
+
 ## 0.5.3 (not yet measured on fresh repos)
 
 ### Claude Code plugin

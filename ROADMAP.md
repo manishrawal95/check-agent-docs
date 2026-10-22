@@ -49,5 +49,5 @@ Each item below says where the evidence is and how to tell when it's done. Finis
 
 ## P3: product
 
-11. **Installable from PyPI**, and a tagged GitHub release so `uses: owner/ctxlint@v0` works.
+11. **Installable from PyPI.** Today it installs from GitHub with pipx.
 12. **`--changed` in the hook.** Today the hook checks a whole instruction file after any edit to it. Consider also running when code files are moved or deleted (PostToolUse on Bash `git mv`/`rm`), using `--changed HEAD`.

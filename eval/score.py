@@ -3,8 +3,8 @@
 Usage: python3 eval/score.py <out_dir> <audit_sample.txt>
 Needs in <out_dir>: review_issues.json, factsonly_issues.json, verdicts_review*.jsonl, verdicts_factsonly*.jsonl,
 audit_claims.json (merged blind audit, each with "aid") and verified_audit*.jsonl (second-reviewer verdicts).
-Recall: an audit claim verified "wrong" counts as found if a confirmed ctxlint issue is in the same repo and file,
-within 1 line, quoting overlapping text. Confirmed ctxlint issues in audited repos that the audit missed are added
+Recall: an audit claim verified "wrong" counts as found if a confirmed check-agent-docs issue is in the same repo and file,
+within 1 line, quoting overlapping text. Confirmed check-agent-docs issues in audited repos that the audit missed are added
 to both numerator and denominator.
 """
 import glob, json, re, statistics, sys

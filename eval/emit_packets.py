@@ -1,6 +1,6 @@
-"""Run a frozen ctxlint on a list of repos and write review packets exactly as the product would.
+"""Run a frozen check-agent-docs on a list of repos and write review packets exactly as the product would.
 
-Usage: python3 eval/emit_packets.py <frozen ctxlint.py> <repos_dir> <repo list> <out_dir>
+Usage: python3 eval/emit_packets.py <frozen check_agent_docs.py> <repos_dir> <repo list> <out_dir>
 Writes <out_dir>/<repo>/*.packet.txt + .facts.json, <out_dir>/review_list.txt (found with os.walk, so
 dot-files are included: a shell glob dropped 15 files in round 4), <out_dir>/factsonly_issues.json and
 <out_dir>/stage1_times.json.

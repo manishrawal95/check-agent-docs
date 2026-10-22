@@ -1,4 +1,4 @@
-name: ctxlint
+name: check-agent-docs
 description: Find claims in CLAUDE.md, AGENTS.md and Cursor/Copilot rules that no longer match the repo
 branding:
   icon: check-square
@@ -27,7 +27,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Run ctxlint
+    - name: Run check-agent-docs
       shell: bash
       env:
         ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
@@ -38,7 +38,7 @@ runs:
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
         ACTION_PATH: ${{ github.action_path }}
         WORKSPACE: ${{ github.workspace }}
-        CTXLINT_CACHE_DIR: ${{ runner.temp }}/ctxlint-cache
+        CHECK_AGENT_DOCS_CACHE_DIR: ${{ runner.temp }}/check-agent-docs-cache
       run: |
         set -uo pipefail
         args=("$WORKSPACE" --format github)
@@ -47,18 +47,18 @@ runs:
           if git -C "$WORKSPACE" cat-file -e "$BASE_SHA" 2>/dev/null || git -C "$WORKSPACE" fetch -q --depth=1 origin "$BASE_SHA"; then
             args+=(--changed "$BASE_SHA")
           else
-            echo "::notice::ctxlint: base commit not available; checking all instruction files"
+            echo "::notice::check-agent-docs: base commit not available; checking all instruction files"
           fi
         fi
-        python3 "$ACTION_PATH/ctxlint.py" "${args[@]}"
+        python3 "$ACTION_PATH/check_agent_docs.py" "${args[@]}"
         code=$?
         if [ -n "$INPUT_SARIF" ]; then
           sarif_args=("${args[@]}")
           sarif_args[2]=sarif
-          python3 "$ACTION_PATH/ctxlint.py" "${sarif_args[@]}" > "$INPUT_SARIF" || true
+          python3 "$ACTION_PATH/check_agent_docs.py" "${sarif_args[@]}" > "$INPUT_SARIF" || true
         fi
         if [ "$code" -ge 2 ]; then
-          echo "::error::ctxlint failed to run (exit $code)"
+          echo "::error::check-agent-docs failed to run (exit $code)"
           exit "$code"
         fi
         if [ "$INPUT_FAIL" = "true" ]; then exit "$code"; fi

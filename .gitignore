@@ -1,5 +1,7 @@
 __pycache__/
 *.pyc
-.ctxlint-cache/
+.check-agent-docs-cache/
 /eval/out*/
 /eval/repos*/
+CLAUDE.local.md
+.worktrees/

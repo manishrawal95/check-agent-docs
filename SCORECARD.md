@@ -1,4 +1,6 @@
-# Gate 1 scorecard: context linter (ctxlint)
+# Scorecard: check-agent-docs
+
+The tool was called ctxlint while these rounds ran, so the text below and the files in `eval/` use that name.
 
 Data behind rounds 4 and 5 (issues, verdicts, audit claims, pass bars, md5s) is in `eval/rounds/`. Repo lists for every round are in `eval/data/`. File names mentioned below refer to those folders.
 

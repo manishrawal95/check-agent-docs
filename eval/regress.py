@@ -1,6 +1,6 @@
 """Regression: are known real problems still flagged as missing facts?
 
-Usage: python3 eval/regress.py <old ctxlint.py> <new ctxlint.py> <repos_dir> [<repos_dir> ...]
+Usage: python3 eval/regress.py <old check_agent_docs.py> <new check_agent_docs.py> <repos_dir> [<repos_dir> ...]
 Runs check() from both versions on every instruction file of every repo found in the repos dirs that appears in
 data/known_real_problems.json or the round lists, then compares.
 """

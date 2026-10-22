@@ -3,8 +3,8 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ctxlint"
-version = "0.5.3"
+name = "check-agent-docs"
+version = "0.6.0"
 description = "Find claims in CLAUDE.md, AGENTS.md and Cursor/Copilot rules that no longer match your repo"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [project.scripts]
-ctxlint = "ctxlint:main_entry"
+check-agent-docs = "check_agent_docs:main_entry"
 
 [tool.setuptools]
-py-modules = ["ctxlint"]
+py-modules = ["check_agent_docs"]

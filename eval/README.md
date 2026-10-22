@@ -1,10 +1,10 @@
-# How ctxlint is measured
+# How check-agent-docs is measured
 
 The rule that matters: **freeze the version, write the pass bars, then run on repos the tool has never seen.** Anything measured on repos you looked at while changing the code is a dev check. Label it that way. Twice a dev check looked good and the fresh round didn't.
 
 ## A round, step by step
 
-1. **Freeze.** `cp ctxlint.py eval/frozen_vX.Y.Z.py && md5sum ctxlint.py`. Record the md5 in the bars file.
+1. **Freeze.** `cp check_agent_docs.py eval/frozen_vX.Y.Z.py && md5sum check_agent_docs.py`. Record the md5 in the bars file.
 2. **Write `PASS_BARS_roundN.md` before running anything.** Use the same five bars as rounds 3–5:
    - precision ≥90% overall
    - precision ≥90% in audited repos
@@ -41,7 +41,7 @@ The rule that matters: **freeze the version, write the pass bars, then run on re
 7. **Verify every issue** with an independent strong model (Opus) using `prompts/VERIFY_PROMPT.md`. Write `verdicts_review_*.jsonl` and `verdicts_factsonly_*.jsonl` into `outN/`.
 8. **Blind recall audit** of the 30 sampled repos with `prompts/AUDIT_PROMPT.md`:
    - Split into three groups balanced by line count.
-   - Auditors must not see any ctxlint output.
+   - Auditors must not see any check-agent-docs output.
    - Merge the results into `outN/audit_claims.json`, giving each claim an `aid`.
 9. **Re-verify every audit claim** with a second reviewer, who rules each one wrong, correct or unclear. Write the results to `outN/verified_audit_*.jsonl`.
 10. **Score:**
