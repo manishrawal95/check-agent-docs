@@ -1,0 +1,42 @@
+{"vid": "v000", "verdict": "confirmed", "fix_correct": true, "evidence": "dotnet/samples/04-hosting has only DurableAgents, DurableWorkflows, FoundryHostedAgents, af-hosting; A2A is at 02-agents/A2A."}
+{"vid": "v001", "verdict": "confirmed", "fix_correct": null, "evidence": "05-end-to-end contains no HostedAgents folder; only dotnet/src/Shared/HostedAgents exists."}
+{"vid": "v002", "verdict": "confirmed", "fix_correct": null, "evidence": "No AgentsWithFoundry folder anywhere; Foundry samples are in 02-agents/AgentProviders/foundry."}
+{"vid": "v003", "verdict": "confirmed", "fix_correct": true, "evidence": "mlflow/server/js has no webpack.config.js; craco.config.js (CRA/webpack override) is present."}
+{"vid": "v004", "verdict": "confirmed", "fix_correct": null, "evidence": "mlflow/server/js has only jest.babel.config.js; no jest.config.js."}
+{"vid": "v005", "verdict": "false_alarm", "fix_correct": false, "evidence": "template/AGENTS.md is scaffolded into user apps (%%RMX_APP_DISPLAY_NAME%%); template has no lockfile, npm scripts exist."}
+{"vid": "v006", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root Makefile test target runs test-compat (TCL), test-sqlite3, test-extensions etc.; .NET/Gradle are in bindings Makefiles."}
+{"vid": "v007", "verdict": "confirmed", "fix_correct": true, "evidence": "Root package.json has no test:frontend script; frontend/package.json defines test (vitest run)."}
+{"vid": "v008", "verdict": "confirmed", "fix_correct": null, "evidence": "Root package.json has no test:backend script; only test, test:unit, test:docker, etc."}
+{"vid": "v009", "verdict": "confirmed", "fix_correct": null, "evidence": "No crypto-streams-test.js in repo; digest stream tests now live in src/tests/streams/digest/."}
+{"vid": "v010", "verdict": "confirmed", "fix_correct": null, "evidence": "crypto-streams-test.js and its wd-test configs absent; replaced by src/tests/streams/digest/digest-cpp/ts.wd-test."}
+{"vid": "v011", "verdict": "confirmed", "fix_correct": null, "evidence": "No ts-digest-stream-test.js in repository tree."}
+{"vid": "v012", "verdict": "confirmed", "fix_correct": null, "evidence": "No ts-digest-stream-test.js in repository tree."}
+{"vid": "v013", "verdict": "confirmed", "fix_correct": true, "evidence": "No enterprise/aibridged; package is coderd/aibridged."}
+{"vid": "v014", "verdict": "false_alarm", "fix_correct": null, "evidence": "`.private/` is a private local-only notes directory, not part of tracked repo by design."}
+{"vid": "v015", "verdict": "confirmed", "fix_correct": true, "evidence": "python/samples/02-agents has no orchestrations; 03-workflows/orchestrations exists."}
+{"vid": "v016", "verdict": "confirmed", "fix_correct": null, "evidence": "python/samples/05-end-to-end has no hosted_agents folder."}
+{"vid": "v017", "verdict": "confirmed", "fix_correct": null, "evidence": "No python/samples/_to_delete tracked, not gitignored."}
+{"vid": "v018", "verdict": "confirmed", "fix_correct": true, "evidence": "python/cog has no base_predictor.py; BasePredictor class is in python/cog/predictor.py."}
+{"vid": "v019", "verdict": "confirmed", "fix_correct": true, "evidence": "BasePredictor defined in python/cog/predictor.py; base_predictor.py absent."}
+{"vid": "v020", "verdict": "confirmed", "fix_correct": null, "evidence": "No mcp-categories.json anywhere in the repository tree."}
+{"vid": "v021", "verdict": "false_alarm", "fix_correct": false, "evidence": "`webstreams/cpp_exports` is a module reference to existing src/per_isolate/webstreams/cpp_exports.ts; claim is correct."}
+{"vid": "v022", "verdict": "confirmed", "fix_correct": null, "evidence": "packages/orchestrator has Dockerfile, test.Dockerfile, Dockerfile.clean-nfs-cache; generate target is `go generate`, no generate.Dockerfile."}
+{"vid": "v023", "verdict": "false_alarm", "fix_correct": false, "evidence": "web/src/locales/*.ts is gitignored lit-localize generated output; suggested styles path is unrelated CSS."}
+{"vid": "v024", "verdict": "false_alarm", "fix_correct": true, "evidence": "Jest positional arg is a regex path pattern; 'components.test.ts' matches components.test.tsx, so command works."}
+{"vid": "v025", "verdict": "confirmed", "fix_correct": null, "evidence": "No packages/stack; packages are cli, js, next, react, shared, ui, template, etc."}
+{"vid": "v026", "verdict": "confirmed", "fix_correct": true, "evidence": "Shared package is packages/shared; no packages/stack-shared."}
+{"vid": "v027", "verdict": "confirmed", "fix_correct": true, "evidence": "UI package is packages/ui; no packages/stack-ui."}
+{"vid": "v028", "verdict": "confirmed", "fix_correct": null, "evidence": "packages/stack neither tracked nor in gitignored generated list (js/react/next/tanstack-start)."}
+{"vid": "v029", "verdict": "confirmed", "fix_correct": true, "evidence": "Schema file is packages/shared/src/config/schema.ts."}
+{"vid": "v030", "verdict": "confirmed", "fix_correct": true, "evidence": "sdks contains implementations and spec; no sdks/specs."}
+{"vid": "v031", "verdict": "confirmed", "fix_correct": null, "evidence": "instructor/utils is a package (utils/__init__.py, core.py, providers.py); no utils.py."}
+{"vid": "v032", "verdict": "confirmed", "fix_correct": null, "evidence": "No process_response.py; logic is in instructor/processing/response.py."}
+{"vid": "v033", "verdict": "confirmed", "fix_correct": null, "evidence": "No typings/ directory tracked and not gitignored."}
+{"vid": "v034", "verdict": "confirmed", "fix_correct": null, "evidence": "tests/app-router.test.ts not in tree; only app-*-specific test files exist."}
+{"vid": "v035", "verdict": "confirmed", "fix_correct": null, "evidence": "tests/app-router.test.ts not in tree, though features.test.ts exists."}
+{"vid": "v036", "verdict": "confirmed", "fix_correct": null, "evidence": "No worker-entry.ts anywhere; Cloudflare code lives in packages/cloudflare/src."}
+{"vid": "v037", "verdict": "confirmed", "fix_correct": true, "evidence": "apps/web/benchmarks absent; benchmarks route is apps/web/app/benchmarks."}
+{"vid": "v038", "verdict": "confirmed", "fix_correct": null, "evidence": ".github/workflows has no deploy-preview-command.yml."}
+{"vid": "v039", "verdict": "confirmed", "fix_correct": null, "evidence": ".github/workflows has no deploy-preview-command.yml."}
+{"vid": "v040", "verdict": "confirmed", "fix_correct": true, "evidence": "Files are web/test/browser/700-applications.test.ts and 600-providers.test.ts."}
+{"vid": "v041", "verdict": "confirmed", "fix_correct": true, "evidence": "Root package.json has no test script; tests/package.json defines test via wdio."}

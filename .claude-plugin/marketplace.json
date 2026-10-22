@@ -1,0 +1,14 @@
+{
+  "name": "ctxlint-marketplace",
+  "owner": {
+    "name": "Manish Rawal"
+  },
+  "description": "ctxlint: keep AI-agent instruction files true to the repo.",
+  "plugins": [
+    {
+      "name": "ctxlint",
+      "source": ".",
+      "description": "Lint AI-agent instruction files (CLAUDE.md, AGENTS.md, Cursor/Copilot rules) against the repo they live in."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{"aid": "a021", "verdict": "wrong", "type": "behaviour", "evidence": "The repo has no ESLint config or jest plugin; focused/skipped tests are blocked by Biome's noFocusedTests/noSkippedTests in biome.jsonc, so the named ESLint rules don't exist here."}
+{"aid": "a022", "verdict": "wrong", "type": "behaviour", "evidence": "Formatting is done by Biome (root `format` script and lint-staged run `biome format`), with biome.jsonc only mimicking the old Prettier settings."}
+{"aid": "a023", "verdict": "wrong", "type": "behaviour", "evidence": ".husky/pre-commit runs `pnpm pre-commit` = lint-staged, which only runs biome format/lint and git add; no type check runs."}
+{"aid": "a024", "verdict": "wrong", "type": "existence", "evidence": "The tree has docs/layouts/_partials/layouts/icons.html and no docs/layouts/_partials/icons.html."}
+{"aid": "a025", "verdict": "wrong", "type": "behaviour", "evidence": "core/CMakeLists.txt sets the library/runtime/archive output to target/classes/io/questdb/bin-local/ (secondary copy to questdb/bin-local/), not src/main/resources/io/questdb/bin/."}
+{"aid": "a026", "verdict": "wrong", "type": "existence", "evidence": "No examples/ directory exists at HEAD, only the root file examples.manifest.yaml."}
+{"aid": "a027", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has `valelint` and `vale:fix` but no `vale` script and no vale package, so `pnpm vale` fails."}
+{"aid": "a028", "verdict": "wrong", "type": "existence", "evidence": "packages/mui-material/src/Button/ contains Button.js (plus Button.d.ts); there is no Button.tsx."}
+{"aid": "a029", "verdict": "wrong", "type": "existence", "evidence": "Button's exports are in index.js and index.d.ts; there is no index.ts."}
+{"aid": "a030", "verdict": "wrong", "type": "behaviour", "evidence": "vitest.shared.mts defaults browser instances to `process.env.VITEST_BROWSERS || 'chromium'`, so test:browser runs Chromium only unless the variable is set."}
+{"aid": "a031", "verdict": "wrong", "type": "behaviour", "evidence": "`prettier` is `pretty-quick --branch master` with no --staged flag, so it formats every file changed against master, not just staged changes."}
+{"aid": "a032", "verdict": "wrong", "type": "behaviour", "evidence": "test:unit is plain `vitest`, and with TEST_SCOPE unset vitest.config.mts runs both the browser (Playwright) and node/jsdom projects."}
+{"aid": "a033", "verdict": "correct", "type": "existence", "evidence": "voucher.py line 85 is in the increase_voucher_usage function, whose body has the `F(\"used\") + 1` increment at line 101; the file and pattern are right and the line number points into the right function."}
+{"aid": "a034", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no test:core:zod script."}
+{"aid": "a035", "verdict": "wrong", "type": "existence", "evidence": "packages/core/package.json has no typecheck:zod-compat script."}
+{"aid": "a036", "verdict": "wrong", "type": "existence", "evidence": "The folder is packages/playground-ui/src/domains (the same file names it correctly elsewhere); src/domain does not exist."}
+{"aid": "a037", "verdict": "wrong", "type": "behaviour", "evidence": "dev:playground:full installs, runs setup and starts examples/agent dev:ui; it's dev:playground that starts the playground, playground-ui and react client dev servers."}
+{"aid": "a038", "verdict": "wrong", "type": "behaviour", "evidence": "dev:playground:full installs, runs setup and starts examples/agent dev:ui; it's dev:playground that starts the playground, playground-ui and react client dev servers."}
+{"aid": "a039", "verdict": "wrong", "type": "existence", "evidence": "No skill, command or script named e2e-frontend-validation exists anywhere in the tree (the e2e skills are e2e-tests-studio and playground-msw-tests)."}
+{"aid": "a040", "verdict": "correct", "type": "existence", "evidence": ".claude/skills/docs-diagrams exists at the repo root, where .claude/ conventionally lives, so the reference is easy to resolve even from docs/AGENTS.md."}
+{"aid": "a041", "verdict": "wrong", "type": "existence", "evidence": "The editor lives at pam/access-rules/access-rule-edit/ip-allowlist/, and the file lists access-rule-edit/ip-allowlist/ as a top-level pam surface beside access-rules/, a path that doesn't exist."}

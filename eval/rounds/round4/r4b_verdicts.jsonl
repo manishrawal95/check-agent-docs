@@ -1,0 +1,13 @@
+{"vid": "rb00", "verdict": "confirmed", "fix_correct": true, "evidence": "Root package.json scripts lack dev:ui; it is defined only in packages/spotlight/package.json whose name is @spotlightjs/spotlight, so the filtered command works."}
+{"vid": "rb01", "verdict": "confirmed", "fix_correct": null, "evidence": "No dev:sidecar script exists in the root or any package.json (spotlight has dev, dev:ui, dev:server, dev:electron only)."}
+{"vid": "rb02", "verdict": "confirmed", "fix_correct": null, "evidence": "Root package.json scripts are dev, dev:website, dev:electron, build, preview, lint, lint:fix, format, preinstall, postinstall; no clean."}
+{"vid": "rb03", "verdict": "confirmed", "fix_correct": null, "evidence": "No clean:deps script in root package.json or any package.json."}
+{"vid": "rb04", "verdict": "confirmed", "fix_correct": null, "evidence": "No clean:all script in root package.json or any package.json."}
+{"vid": "rb05", "verdict": "confirmed", "fix_correct": null, "evidence": "packages/spotlight/src at HEAD contains electron, server, shared and ui; no sidecar directory."}
+{"vid": "rb06", "verdict": "confirmed", "fix_correct": null, "evidence": "git ls-tree shows no notebooks/ directory; .ipynb files live only under src/platform and test/."}
+{"vid": "rb07", "verdict": "confirmed", "fix_correct": null, "evidence": "src/platform has an embeddings/ folder (plural) but no embedding/ folder, so the listed path does not exist."}
+{"vid": "rb08", "verdict": "confirmed", "fix_correct": true, "evidence": "Only src/extension/chatSessions/claude/AGENTS.md exists; src/extension/agents/claude does not."}
+{"vid": "rb09", "verdict": "confirmed", "fix_correct": true, "evidence": "src/extension/chatSessions/claude/AGENTS.md exists and has a '## Upgrading Anthropic SDK Packages' heading at line 392; the agents/claude path does not exist."}
+{"vid": "rb10", "verdict": "confirmed", "fix_correct": null, "evidence": "No jest.config.js in the tree; tests use vitest (vitest.config.ts, \"test\": \"vitest run\")."}
+{"vid": "rb11", "verdict": "confirmed", "fix_correct": null, "evidence": "No eslint.config.mjs in the tree; linting uses oxlint with .oxlintrc.json."}
+{"vid": "rb12", "verdict": "confirmed", "fix_correct": null, "evidence": "tests/ contains entities, entities-1/2/4, -mssql, -schema, -sql, -webpack(-invalid) but no entities-js."}

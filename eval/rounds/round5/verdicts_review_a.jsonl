@@ -1,0 +1,29 @@
+{"vid": "r000", "verdict": "false_alarm", "fix_correct": null, "evidence": "python/ holds packages vercel-runtime and vercel-workers, each with its own tests/ folder, so 'tests/' is correct relative to the package where uv commands run."}
+{"vid": "r001", "verdict": "false_alarm", "fix_correct": null, "evidence": "The line is a general convention for any _internal/ module (no backwards compatibility), not a pointer to an existing path; it does not misdirect an agent."}
+{"vid": "r002", "verdict": "confirmed", "fix_correct": null, "evidence": "docs/package.json 'lint' runs node scripts/lint.js, which spawns eslint; tests are 'pnpm test' (jest), so the 'Run tests' comment is wrong."}
+{"vid": "r003", "verdict": "confirmed", "fix_correct": true, "evidence": "packages/@expo/cli/bin/ contains only cli.js (which requires ../build/src); no bin/cli.ts exists."}
+{"vid": "r004", "verdict": "confirmed", "fix_correct": true, "evidence": "No packages/@expo/cli/src/events/ exists; the JSONL events command lives in src/command/events/ (eventsAsync.ts, help.ts)."}
+{"vid": "r005", "verdict": "confirmed", "fix_correct": true, "evidence": "No src/graphql/ in packages/@expo/cli; GraphQL client and mutations are in src/api/graphql/."}
+{"vid": "r006", "verdict": "confirmed", "fix_correct": true, "evidence": "The tree places ts-declarations/ at the package root, but only packages/@expo/cli/src/ts-declarations exists."}
+{"vid": "r007", "verdict": "confirmed", "fix_correct": null, "evidence": "packages/@expo/cli/package.json scripts are build/build:cli/build:metro-require (expo-build) etc.; there is no prepublishOnly script."}
+{"vid": "r008", "verdict": "confirmed", "fix_correct": null, "evidence": "No taskfile.js exists in the repo; the package builds with 'expo-build cjs:src=build/src' instead of taskr."}
+{"vid": "r009", "verdict": "false_alarm", "fix_correct": null, "evidence": "docs/agents/domain.md says CONTEXT.md is created lazily and to proceed silently if absent; docs/adr/ exists."}
+{"vid": "r010", "verdict": "false_alarm", "fix_correct": null, "evidence": "CHANGELOG.md is absent, but the line is a do-not-modify list; naming a missing file there sends the agent nowhere and README.md/CONTRIBUTING.md exist."}
+{"vid": "r011", "verdict": "false_alarm", "fix_correct": false, "evidence": "terminal/ is the app crate's module (app/src/terminal exists), a natural crate-relative reading; the suggested fix lists six paths rather than replacing terminal/."}
+{"vid": "r012", "verdict": "false_alarm", "fix_correct": null, "evidence": "torch/csrc/dynamo/extra_state.cpp and extra_state.h both exist at HEAD."}
+{"vid": "r013", "verdict": "false_alarm", "fix_correct": null, "evidence": "torch/csrc/dynamo/cache_entry.cpp and cache_entry.h both exist at HEAD."}
+{"vid": "r014", "verdict": "false_alarm", "fix_correct": null, "evidence": "torch/csrc/dynamo/init.cpp exists at HEAD."}
+{"vid": "r015", "verdict": "false_alarm", "fix_correct": null, "evidence": "torch/csrc/dynamo/compiled_autograd.cpp and compiled_autograd.h both exist at HEAD."}
+{"vid": "r016", "verdict": "confirmed", "fix_correct": true, "evidence": "There is no tests/settings/ directory; settings tests are in tests/test_settings.py."}
+{"vid": "r017", "verdict": "confirmed", "fix_correct": true, "evidence": "The only icons partial is docs/layouts/_partials/layouts/icons.html; docs/layouts/_partials/icons.html does not exist."}
+{"vid": "r018", "verdict": "false_alarm", "fix_correct": false, "evidence": "Root package.json devDependencies include @playwright/test (provides the playwright bin) and root scripts call 'playwright test ... --config e2e/qwik-e2e/playwright.config.ts', so pnpm playwright works from root."}
+{"vid": "r019", "verdict": "false_alarm", "fix_correct": false, "evidence": "Root package.json devDependencies include @playwright/test (provides the playwright bin) and root scripts call 'playwright test ... --config e2e/qwik-e2e/playwright.config.ts', so pnpm playwright works from root."}
+{"vid": "r020", "verdict": "false_alarm", "fix_correct": false, "evidence": "Root package.json devDependencies include @playwright/test (provides the playwright bin) and root scripts call 'playwright test ... --config e2e/qwik-e2e/playwright.config.ts', so pnpm playwright works from root."}
+{"vid": "r021", "verdict": "confirmed", "fix_correct": true, "evidence": "packages/mui-material/src/Button/ contains Button.js (plus Button.d.ts), no Button.tsx."}
+{"vid": "r022", "verdict": "confirmed", "fix_correct": true, "evidence": "packages/mui-material/src/Button/ contains index.js and index.d.ts, no index.ts."}
+{"vid": "r023", "verdict": "confirmed", "fix_correct": null, "evidence": ".changeset/ contains README.md, config.json and other changesets but no fix-recipe-bracket-syntax.md, though the section presents it as current staged work."}
+{"vid": "r024", "verdict": "confirmed", "fix_correct": null, "evidence": "Root 'test' script is 'vitest run' from the repo root, and code/package.json has no test script, so it does not delegate to 'cd code; yarn test'."}
+{"vid": "r025", "verdict": "confirmed", "fix_correct": null, "evidence": "No code/vitest.workspace.ts exists; vitest config files are root vitest.config.ts and code/vitest.config.storybook.ts/vitest.shared.ts."}
+{"vid": "r026", "verdict": "confirmed", "fix_correct": null, "evidence": "No code/vitest.workspace.ts exists; vitest config files are root vitest.config.ts and code/vitest.config.storybook.ts/vitest.shared.ts."}
+{"vid": "r027", "verdict": "false_alarm", "fix_correct": null, "evidence": "python_files/pyproject.toml [tool.pyright] has exclude=['lib'] and python_files/lib/** is gitignored (install target), so the description is accurate."}
+{"vid": "r028", "verdict": "confirmed", "fix_correct": null, "evidence": "package.json has no watch-tests script (only compile, compiled, compileApi, kill-compiled), so 'npm run watch-tests' fails."}

@@ -1,0 +1,17 @@
+{
+  "name": "ctxlint",
+  "version": "0.5.3",
+  "description": "Finds claims in CLAUDE.md, AGENTS.md, Cursor and Copilot rules that no longer match the repo: dead paths, moved files, missing scripts and targets, wrong package manager, wrong descriptions of commands.",
+  "author": {
+    "name": "Manish Rawal"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-md",
+    "agents-md",
+    "lint",
+    "documentation",
+    "context"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

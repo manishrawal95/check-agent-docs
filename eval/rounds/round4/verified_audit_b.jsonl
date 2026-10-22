@@ -1,0 +1,44 @@
+{"aid": "a044", "verdict": "wrong", "type": "existence", "evidence": "No src/extension/endpoint/ in tracked tree; endpoint code lives in src/platform/endpoint/."}
+{"aid": "a045", "verdict": "wrong", "type": "existence", "evidence": "ClaudeCodeSessionService has private _getProjectFolders() delegating to getProjectFolders in node/claudeProjectFolders.ts; no _getProjectSlugs anywhere."}
+{"aid": "a046", "verdict": "wrong", "type": "existence", "evidence": "node/sessionParser/claudeCodeSessionService.ts defines _getProjectFolders(), not _getProjectSlugs()."}
+{"aid": "a047", "verdict": "wrong", "type": "existence", "evidence": "Spec is at node/sessionParser/test/claudeCodeSessionService.spec.ts; node/test/ has no such file."}
+{"aid": "a048", "verdict": "wrong", "type": "existence", "evidence": "Registry is common/claudeHookRegistry.ts; node/hooks/ has index, logging, session, subagent, tool hooks only."}
+{"aid": "a049", "verdict": "wrong", "type": "behaviour", "evidence": "claudeCodeDebugEnabled appears only in AGENTS.md; package.json defines no such setting (only claudeAgent.* settings)."}
+{"aid": "a050", "verdict": "wrong", "type": "behaviour", "evidence": "yarn test is 'vitest run' (vitest 5); --testPathPattern is a Jest flag. Repo offers test:sqlite script."}
+{"aid": "a051", "verdict": "wrong", "type": "behaviour", "evidence": "packages/ contains 21 package directories, each with package.json."}
+{"aid": "a052", "verdict": "wrong", "type": "existence", "evidence": "No packages/knex; only packages/knex-compat and packages/sql."}
+{"aid": "a053", "verdict": "wrong", "type": "existence", "evidence": "No packages/better-sqlite; sqlite drivers are sqlite, libsql, sql-js, pglite."}
+{"aid": "a054", "verdict": "wrong", "type": "behaviour", "evidence": "HEAD:lerna.json version is 7.2.5, not 6.5.5."}
+{"aid": "a055", "verdict": "wrong", "type": "existence", "evidence": "No jest.config.js tracked; root has vitest.config.ts."}
+{"aid": "a056", "verdict": "wrong", "type": "existence", "evidence": "No eslint.config.mjs tracked; root has .oxlintrc.json and lint script uses oxlint."}
+{"aid": "a057", "verdict": "wrong", "type": "existence", "evidence": "No tests/entities-js/ in tracked tree (entities, entities-1/2/4, -sql, -schema, -mssql, -webpack exist)."}
+{"aid": "a058", "verdict": "wrong", "type": "behaviour", "evidence": "build script is 'yarn workspaces foreach -Ap --topological-dev run build'; Lerna not used for build."}
+{"aid": "a059", "verdict": "wrong", "type": "behaviour", "evidence": "tests.yml lint job runs 'yarn oxfmt packages tests --check' and 'yarn lint' (oxlint), no ESLint."}
+{"aid": "a060", "verdict": "wrong", "type": "behaviour", "evidence": "tests.yml matrix node-version: [ 22, 24, 26 ]."}
+{"aid": "a061", "verdict": "wrong", "type": "behaviour", "evidence": "package.json engines node '>= 22.17.0'."}
+{"aid": "a062", "verdict": "wrong", "type": "behaviour", "evidence": "package.json packageManager is yarn@4.18.1."}
+{"aid": "a063", "verdict": "wrong", "type": "behaviour", "evidence": "package.json devDependency typescript is 7.0.2."}
+{"aid": "a064", "verdict": "wrong", "type": "behaviour", "evidence": "test script is 'vitest run'; vitest.config.ts present, no Jest."}
+{"aid": "a065", "verdict": "wrong", "type": "existence", "evidence": "No root CLAUDE.md tracked; only .claude/CLAUDE.md (no Python rules) and AGENTS.md symlink."}
+{"aid": "a066", "verdict": "wrong", "type": "behaviour", "evidence": "update-docs.yml triggers on merged PRs touching src/pipecat_flows/** and updates pipecat-ai/docs repo, not ReadTheDocs."}
+{"aid": "a067", "verdict": "wrong", "type": "behaviour", "evidence": "examples/ has 9 top-level example scripts plus quickstart/hello_world.py = 10 (utils.py, hold_music helper excluded)."}
+{"aid": "a068", "verdict": "wrong", "type": "behaviour", "evidence": "quickstart/hello_world.py hardcodes GoogleLLMService; llm_switching.py never reads LLM_PROVIDER."}
+{"aid": "a069", "verdict": "wrong", "type": "behaviour", "evidence": "mise install task symlinks to [dest] arg defaulting to ~/.local/bin, not /usr/local/bin."}
+{"aid": "a070", "verdict": "wrong", "type": "behaviour", "evidence": "install default dest is ~/.local/bin; task has depends = [\"build:cog\"]."}
+{"aid": "a071", "verdict": "wrong", "type": "behaviour", "evidence": "install task uses positional usage_dest argument; PREFIX is never read."}
+{"aid": "a072", "verdict": "wrong", "type": "behaviour", "evidence": "Default ~/.local/bin, custom path via positional dest not PREFIX, build:cog is already a dependency."}
+{"aid": "a073", "verdict": "wrong", "type": "behaviour", "evidence": "test:python runs 'nox -s tests -p 3.13'; noxfile.py exists, no tox config."}
+{"aid": "a074", "verdict": "wrong", "type": "behaviour", "evidence": "Python tests use noxfile.py sessions; no tox.ini or tox config tracked."}
+{"aid": "a075", "verdict": "wrong", "type": "behaviour", "evidence": "test:python runs only 3.13 ('latest supported Python'); test:python:all runs all versions."}
+{"aid": "a076", "verdict": "wrong", "type": "behaviour", "evidence": "Repo uses nox (noxfile.py); no tox configuration tracked."}
+{"aid": "a077", "verdict": "wrong", "type": "existence", "evidence": "No tox config so no py312-tests env; python/tests/server/ and test_http.py don't exist."}
+{"aid": "a078", "verdict": "wrong", "type": "behaviour", "evidence": "harness.go ResolveCogBinary: COG_BINARY else builds from source into integration-tests/.bin/cog; no PATH lookup."}
+{"aid": "a079", "verdict": "wrong", "type": "existence", "evidence": "python/cog/base_predictor.py not tracked; predictor code is python/cog/predictor.py."}
+{"aid": "a080", "verdict": "wrong", "type": "existence", "evidence": "No python/cog/command/ directory; python/cog has only server/ subdirectory."}
+{"aid": "a081", "verdict": "wrong", "type": "existence", "evidence": "python/cog/base_predictor.py not tracked; python/cog/predictor.py exists."}
+{"aid": "a082", "verdict": "wrong", "type": "behaviour", "evidence": "Makefile fmt target runs 'gofmt -s -l -w $(SRCS)'."}
+{"aid": "a083", "verdict": "wrong", "type": "behaviour", "evidence": "make generate runs 'go generate' -> generate.go runs ./internal (gendoc.go docs); no deepcopy."}
+{"aid": "a084", "verdict": "wrong", "type": "behaviour", "evidence": "validate-files runs validate-vendor.sh (go mod tidy diff), validate-misspell.sh, validate-shell-script.sh; no generated-files check."}
+{"aid": "a085", "verdict": "wrong", "type": "behaviour", "evidence": "examples/svelte-chat dev script is 'vite dev' without portless (also mcp uses tsx watch)."}
+{"aid": "a086", "verdict": "wrong", "type": "behaviour", "evidence": "svelte, vue, vite-renderers use names like svelte.json-render without -demo; r3f-gsplat differs too."}
+{"aid": "a087", "verdict": "wrong", "type": "existence", "evidence": "packages/core/src/observability.ts absent; hydrateResourceIO defined in core/src/serialization-format.ts, exported via packages/workflow/src/observability.ts."}

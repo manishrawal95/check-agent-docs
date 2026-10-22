@@ -1,0 +1,44 @@
+{"aid": "a000", "verdict": "wrong", "type": "existence", "evidence": "No src/lib/features/change-request/ dir; only change-request-access-service and change-request-segment-usage-service exist."}
+{"aid": "a001", "verdict": "wrong", "type": "existence", "evidence": "No tracked path contains a read-models/ or read-model/ directory; read models live as files in feature dirs."}
+{"aid": "a002", "verdict": "wrong", "type": "behaviour", "evidence": "Root test is 'vitest run'; vitest.config.ts unit project excludes frontend/**, e2e project only src/test/e2e."}
+{"aid": "a003", "verdict": "wrong", "type": "existence", "evidence": "Root package.json scripts have no test:frontend."}
+{"aid": "a004", "verdict": "wrong", "type": "existence", "evidence": "Root package.json scripts have no test:backend."}
+{"aid": "a005", "verdict": "wrong", "type": "existence", "evidence": "features/feature-search/ has no feature-search-read-model.ts (only store, service, controller, etc.)."}
+{"aid": "a006", "verdict": "wrong", "type": "existence", "evidence": "Actual path is frontend/src/hooks/api/actions/useFeatureApi/useFeatureApi.ts."}
+{"aid": "a007", "verdict": "wrong", "type": "existence", "evidence": "Not at src/test/fixtures; file is src/lib/features/feature-toggle/fakes/fake-feature-toggle-store.ts."}
+{"aid": "a008", "verdict": "wrong", "type": "existence", "evidence": "No mcp-categories.json tracked anywhere; not gitignored either."}
+{"aid": "a009", "verdict": "wrong", "type": "existence", "evidence": "packages/vinext/src has no cloudflare/ dir; Cloudflare cache code is in packages/cloudflare/src/cache."}
+{"aid": "a010", "verdict": "wrong", "type": "existence", "evidence": "tests/app-router.test.ts not tracked; only tests/app-router-*.test.ts variants exist."}
+{"aid": "a011", "verdict": "wrong", "type": "behaviour", "evidence": "ci.yml E2E matrix lists 53 distinct Playwright projects, not 5."}
+{"aid": "a012", "verdict": "wrong", "type": "existence", "evidence": "No worker-entry.ts under packages/vinext/src (no cloudflare/ dir); only tests/*worker-entry* files."}
+{"aid": "a013", "verdict": "wrong", "type": "existence", "evidence": "No apps/web/benchmarks dir; benchmarks pages live at apps/web/app/benchmarks/."}
+{"aid": "a014", "verdict": "wrong", "type": "existence", "evidence": ".github/workflows has no deploy-preview-command.yml."}
+{"aid": "a015", "verdict": "wrong", "type": "existence", "evidence": ".github/workflows has no deploy-preview-command.yml."}
+{"aid": "a016", "verdict": "wrong", "type": "behaviour", "evidence": "No jest dependency or jest config in any package.json; no *-test.ts unit tests in apps/web/test; only vitest configs."}
+{"aid": "a017", "verdict": "wrong", "type": "existence", "evidence": "apps/web has no jest dependency/config and no *-test files; pnpm jest cannot run."}
+{"aid": "a018", "verdict": "wrong", "type": "existence", "evidence": "apps/web vitest projects are named 'unit' and 'browser' (script uses 'element-web (browser)'); no web-browser."}
+{"aid": "a019", "verdict": "wrong", "type": "behaviour", "evidence": "Root vitest.config.ts projects glob {apps,modules,packages}/*/vitest.config.ts includes packages/shared-components."}
+{"aid": "a020", "verdict": "wrong", "type": "behaviour", "evidence": "apps/web coverage = 'pnpm test --coverage' but apps/web has no test script and no jest; it is not jest."}
+{"aid": "a021", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no dev:ui (only packages/spotlight has it); sibling commands are root scripts."}
+{"aid": "a022", "verdict": "wrong", "type": "existence", "evidence": "No dev:sidecar script in root or packages/spotlight or website package.json."}
+{"aid": "a023", "verdict": "wrong", "type": "existence", "evidence": "No clean script in root or workspace package.json files."}
+{"aid": "a024", "verdict": "wrong", "type": "existence", "evidence": "No clean:deps script in any package.json."}
+{"aid": "a025", "verdict": "wrong", "type": "existence", "evidence": "No clean:all script in any package.json."}
+{"aid": "a026", "verdict": "wrong", "type": "existence", "evidence": "packages/spotlight/src has ui, server, shared, electron; no sidecar/ directory."}
+{"aid": "a027", "verdict": "wrong", "type": "existence", "evidence": "Workspaces are packages/*: only @spotlightjs/spotlight and @spotlightjs/website; no tsconfig package."}
+{"aid": "a028", "verdict": "wrong", "type": "existence", "evidence": "foundations/core/packages/core/src/plugin.ts not tracked; plugin.ts exists only in token/src and platform tests."}
+{"aid": "a029", "verdict": "wrong", "type": "existence", "evidence": "No package.json at foundations/server root; test:coverage only in foundations/server/common/scripts/package.json."}
+{"aid": "a030", "verdict": "wrong", "type": "behaviour", "evidence": "prepare-tests.sh unconditionally runs compose kill, down --volumes, up --force-recreate; no container detection."}
+{"aid": "a031", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no test script; it is only in tests/package.json."}
+{"aid": "a032", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no test-single; only tests/package.json."}
+{"aid": "a033", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no test-dev; only tests/package.json."}
+{"aid": "a034", "verdict": "wrong", "type": "existence", "evidence": "Root package.json has no test-dev-single; only tests/package.json."}
+{"aid": "a035", "verdict": "wrong", "type": "existence", "evidence": "Tracked files are react/features/app/middlewares.{any,native,web}.ts, not .js."}
+{"aid": "a036", "verdict": "wrong", "type": "behaviour", "evidence": "webpack.config.js reads ANALYZE_BUNDLE env var; webpack-cli 5.1.4 has no -p or --analyze-bundle flags."}
+{"aid": "a037", "verdict": "wrong", "type": "existence", "evidence": "No modules/external-api; external API is in modules/API/external."}
+{"aid": "a038", "verdict": "wrong", "type": "existence", "evidence": "ReplaceDoubleQuoteWithSingleQuote is defined in src/Kiota.Builder/Extensions/StringExtensions.cs, not the named files."}
+{"aid": "a039", "verdict": "wrong", "type": "existence", "evidence": "No notebooks/ directory tracked anywhere in repo."}
+{"aid": "a040", "verdict": "wrong", "type": "existence", "evidence": "Under src/extension/ heading; src/extension/endpoint/ not tracked, only src/platform/endpoint."}
+{"aid": "a041", "verdict": "wrong", "type": "existence", "evidence": "src/platform/embedding/ absent; directory is src/platform/embeddings/."}
+{"aid": "a042", "verdict": "wrong", "type": "existence", "evidence": "src/extension/agents/claude/AGENTS.md not tracked; file is src/extension/chatSessions/claude/AGENTS.md."}
+{"aid": "a043", "verdict": "wrong", "type": "existence", "evidence": "src/extension/agents/claude/AGENTS.md not tracked; file is src/extension/chatSessions/claude/AGENTS.md."}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctxlint"
+version = "0.5.3"
+description = "Find claims in CLAUDE.md, AGENTS.md and Cursor/Copilot rules that no longer match your repo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+keywords = ["claude", "agents", "lint", "cursor", "copilot", "documentation"]
+classifiers = [
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.scripts]
+ctxlint = "ctxlint:main_entry"
+
+[tool.setuptools]
+py-modules = ["ctxlint"]

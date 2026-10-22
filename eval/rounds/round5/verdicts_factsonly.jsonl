@@ -1,0 +1,37 @@
+{"vid": "f000", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json declares packageManager yarn@4.18.0, and Yarn Berry has a built-in `yarn npm audit` command, so no script is needed."}
+{"vid": "f001", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json declares packageManager yarn@4.18.0, and Yarn Berry has a built-in `yarn npm audit` command, so no script is needed."}
+{"vid": "f002", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json declares packageManager yarn@4.18.0, and Yarn Berry has a built-in `yarn npm audit` command, so no script is needed."}
+{"vid": "f003", "verdict": "false_alarm", "fix_correct": false, "evidence": "`./agent-panel.md` is an example of relative-link syntax in a Cross-Linking style guide, not a path in the docs/ folder itself."}
+{"vid": "f004", "verdict": "false_alarm", "fix_correct": null, "evidence": "The line is in a list of rules-file names that Zed recognizes in user projects, not a path in this repo."}
+{"vid": "f005", "verdict": "confirmed", "fix_correct": null, "evidence": "The tree has no tests/settings/ directory; settings tests live in tests/test_settings.py (and tests/server/logs/test_settings.py)."}
+{"vid": "f006", "verdict": "false_alarm", "fix_correct": null, "evidence": "`ui-v2/feature-description` is a git branch-naming pattern, not a file path."}
+{"vid": "f007", "verdict": "confirmed", "fix_correct": true, "evidence": "docs/layouts/_partials/icons.html does not exist; the file is at docs/layouts/_partials/layouts/icons.html."}
+{"vid": "f008", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json devDependencies include @playwright/test, which provides the `playwright` bin, and root scripts call `playwright test`, so `pnpm playwright` resolves."}
+{"vid": "f009", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json devDependencies include @playwright/test, which provides the `playwright` bin, and root scripts call `playwright test`, so `pnpm playwright` resolves."}
+{"vid": "f010", "verdict": "false_alarm", "fix_correct": null, "evidence": "Root package.json devDependencies include @playwright/test, which provides the `playwright` bin, and root scripts call `playwright test`, so `pnpm playwright` resolves."}
+{"vid": "f011", "verdict": "false_alarm", "fix_correct": null, "evidence": "The text says to 'Adjust file paths to your app', so `src/app/global.css` is an example path in the user's app."}
+{"vid": "f012", "verdict": "false_alarm", "fix_correct": null, "evidence": "The text says to 'Adjust file paths to your app', so `styles/global.css` is an example path in the user's app."}
+{"vid": "f013", "verdict": "confirmed", "fix_correct": null, "evidence": ".changeset/ at HEAD has no fix-recipe-bracket-syntax.md (only README, config.json and other changesets), yet CLAUDE.md says it was created."}
+{"vid": "f014", "verdict": "confirmed", "fix_correct": null, "evidence": "The 'Current Git Status' section lists .changeset/fix-recipe-bracket-syntax.md as staged, but that file does not exist at HEAD."}
+{"vid": "f015", "verdict": "confirmed", "fix_correct": null, "evidence": "code/vitest.workspace.ts is not tracked; code/ has vitest.shared.ts, vitest.config.storybook.ts, vitest-setup.ts and vitest.helpers.ts instead."}
+{"vid": "f016", "verdict": "false_alarm", "fix_correct": null, "evidence": "The line tells the agent to write corrections into .agents/ux/lobe-design-rules.md (a file it creates or appends to); its sibling files .agents/ux/product.md and components.md exist."}
+{"vid": "f017", "verdict": "confirmed", "fix_correct": null, "evidence": "package.json scripts have no `watch-tests` entry (the closest is `compile`: tsc -watch), so `npm run watch-tests` fails."}
+{"vid": "f018", "verdict": "confirmed", "fix_correct": true, "evidence": "debugLauncher.ts exists only at src/client/testing/common/debugLauncher.ts, not under testController/common."}
+{"vid": "f019", "verdict": "confirmed", "fix_correct": true, "evidence": "debugLauncher.ts exists only at src/client/testing/common/debugLauncher.ts, not under testController/common."}
+{"vid": "f020", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f021", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f022", "verdict": "confirmed", "fix_correct": null, "evidence": "The Account test folder contains AccountGetCommandTests.cs and AccountCreateCommandTests.cs, not StorageAccountGetCommandTests.cs."}
+{"vid": "f023", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f024", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f025", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f026", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f027", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "f028", "verdict": "false_alarm", "fix_correct": null, "evidence": "The line describes the install command that a package README gives to end users of @azure packages, and npm is right for consumers."}
+{"vid": "f029", "verdict": "confirmed", "fix_correct": null, "evidence": ".github/skills/ has no azsdk-common-pipeline-troubleshooting skill; the pipeline skills are azsdk-common-pipeline-analysis and azsdk-common-pipeline-fixer."}
+{"vid": "f030", "verdict": "confirmed", "fix_correct": null, "evidence": "eng/ at HEAD has no agent-evals directory (its subfolders are common, containers, pipelines, scripts, tools, tsconfigs, vitestconfigs and similar)."}
+{"vid": "f031", "verdict": "confirmed", "fix_correct": null, "evidence": "eng/ at HEAD has no agent-evals directory (its subfolders are common, containers, pipelines, scripts, tools, tsconfigs, vitestconfigs and similar)."}
+{"vid": "f032", "verdict": "false_alarm", "fix_correct": null, "evidence": "The turborepo-managed block refers to docs/README.md inside the installed turbo package, not in this repo."}
+{"vid": "f033", "verdict": "confirmed", "fix_correct": true, "evidence": "pkg/go.mod declares module github.com/milvus-io/milvus/pkg/v3 and the package is on disk at pkg/util/paramtable, so `pkg/v2/util/paramtable` is wrong."}
+{"vid": "f034", "verdict": "confirmed", "fix_correct": true, "evidence": "global.d.ts exists only at packages/insomnia/types/global.d.ts, not at src/global.d.ts or packages/insomnia/src/global.d.ts."}
+{"vid": "f035", "verdict": "false_alarm", "fix_correct": null, "evidence": "`access-rules/new` is an Angular route path that the text describes, not a file path."}
+{"vid": "f036", "verdict": "false_alarm", "fix_correct": null, "evidence": "`marimo/host-imports` is a lint rule: frontend/.oxlintrc.json sets it to error and frontend/lint/marimo-plugin.js registers it."}

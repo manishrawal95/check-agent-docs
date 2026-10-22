@@ -1,0 +1,29 @@
+{"vid": "r029", "verdict": "confirmed", "fix_correct": true, "evidence": "package.json scripts define test:unittests (mocha) but no 'unittest' script; 'unittest' appears only in keywords."}
+{"vid": "r030", "verdict": "confirmed", "fix_correct": true, "evidence": "Tree has src/client/testing/common/debugLauncher.ts and no debugLauncher.ts under testController/common."}
+{"vid": "r031", "verdict": "confirmed", "fix_correct": true, "evidence": "Tree has src/client/testing/common/debugLauncher.ts and no debugLauncher.ts under testController/common."}
+{"vid": "r032", "verdict": "confirmed", "fix_correct": null, "evidence": "docs/ in microsoft_mcp has no option-conversion.md (tree lists Authentication.md, recorded-tests.md, etc. but no such file)."}
+{"vid": "r033", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r034", "verdict": "confirmed", "fix_correct": true, "evidence": "Storage.Tests/Account/ contains AccountGetCommandTests.cs and AccountCreateCommandTests.cs, not StorageAccountGetCommandTests.cs."}
+{"vid": "r035", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r036", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r037", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r038", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r039", "verdict": "confirmed", "fix_correct": null, "evidence": "No option-conversion.md exists anywhere in the microsoft_mcp tree."}
+{"vid": "r040", "verdict": "confirmed", "fix_correct": true, "evidence": ".github/skills has azsdk-common-pipeline-analysis (description: analyze CI/CD pipeline failures) but no pipeline-troubleshooting skill."}
+{"vid": "r041", "verdict": "confirmed", "fix_correct": null, "evidence": "No eng/agent-evals path exists in the tree and it is not gitignored; evals live under .github/skills/*/evals and eng/common/pipelines."}
+{"vid": "r042", "verdict": "confirmed", "fix_correct": null, "evidence": "No eng/agent-evals path exists in the tree and it is not gitignored."}
+{"vid": "r043", "verdict": "false_alarm", "fix_correct": null, "evidence": "packages/aws-cdk-lib/package.json defines \"test\": \"jest\", so yarn test works there."}
+{"vid": "r044", "verdict": "false_alarm", "fix_correct": null, "evidence": "packages/aws-cdk-lib/package.json defines \"test\": \"jest\", so yarn test aws-lambda runs jest filtered to aws-lambda."}
+{"vid": "r045", "verdict": "confirmed", "fix_correct": null, "evidence": "Root package.json scripts (pkglint, build, pack, compat, bump, ...) contain no lint script, so yarn lint --fix at root fails."}
+{"vid": "r046", "verdict": "confirmed", "fix_correct": true, "evidence": "src/content has no products folder; product metadata YAML (195 files) is in src/content/directory per content.config.ts."}
+{"vid": "r047", "verdict": "confirmed", "fix_correct": null, "evidence": "docs/reference/ has only data-types, engines, formats, functions, settings, statements, system-tables etc.; no interfaces/specs anywhere in the tree."}
+{"vid": "r048", "verdict": "confirmed", "fix_correct": true, "evidence": "paramtable lives at pkg/util/paramtable (pkg/go.mod module is github.com/milvus-io/milvus/pkg/v3); no pkg/v2 directory."}
+{"vid": "r049", "verdict": "confirmed", "fix_correct": true, "evidence": "python/lancedb does not exist; the Python package is at python/python/lancedb."}
+{"vid": "r050", "verdict": "confirmed", "fix_correct": null, "evidence": "No preload.ts in packages/insomnia/src/main; the preload is src/entry.preload.ts."}
+{"vid": "r051", "verdict": "confirmed", "fix_correct": true, "evidence": "packages/insomnia/src has no account/ folder; account code is in src/common/account (crypt.ts, session.ts) and src/ui/account."}
+{"vid": "r052", "verdict": "confirmed", "fix_correct": null, "evidence": "src/main/preload.ts does not exist; preload is packages/insomnia/src/entry.preload.ts."}
+{"vid": "r053", "verdict": "confirmed", "fix_correct": true, "evidence": "global.d.ts exists only at packages/insomnia/types/global.d.ts, not src/global.d.ts."}
+{"vid": "r054", "verdict": "confirmed", "fix_correct": false, "evidence": "No stream.ts in frontend/src/core/host; host uses createNotebookReducer from @marimo-team/client (packages/client/src/reducers/notebook.ts), while transport/stream.ts is the EventStream transport, not the reducer."}
+{"vid": "r055", "verdict": "confirmed", "fix_correct": null, "evidence": "No yarn.js exists anywhere in the jupyterlab tree (only .yarnrc.yml and yarn.lock files; jlpmapp.py also absent)."}
+{"vid": "r056", "verdict": "false_alarm", "fix_correct": null, "evidence": "'docs/versioning guidance' refers to the file's own '2) Documentation versioning' section, not a path."}
+{"vid": "r057", "verdict": "false_alarm", "fix_correct": null, "evidence": "'docs/whatsnew' is shorthand for docs or whatsnew notes (cf. line 506 'docs/whatsnew note'), and whatsnew files exist under docs/history/."}

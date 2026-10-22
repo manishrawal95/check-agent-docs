@@ -1,0 +1,21 @@
+{"aid": "a000", "verdict": "wrong", "type": "existence", "evidence": "tests/ at HEAD has no settings/ directory; settings tests are in tests/test_settings.py."}
+{"aid": "a001", "verdict": "wrong", "type": "existence", "evidence": "deployments/runner.py lines 407-413 are validate_deployment_parameters code; the pull_steps create_payload logic is at ~493-501 and ~599-607."}
+{"aid": "a002", "verdict": "wrong", "type": "existence", "evidence": "flows.py:3084 is inside a to_deployment docstring example; the `not deployment.pull_steps` $STORAGE_BASE_PATH substitution is at ~3261-3286."}
+{"aid": "a003", "verdict": "wrong", "type": "existence", "evidence": "ui-v2/src/api/ has no mocks/ subdirectory at HEAD."}
+{"aid": "a004", "verdict": "wrong", "type": "existence", "evidence": "ui-v2/src/api/ has no mocks/ subdirectory at HEAD."}
+{"aid": "a005", "verdict": "wrong", "type": "behaviour", "evidence": "spec/package.json depends on vitest (no mocha/chai) and spec/ contains vitest.config.ts and a vitest runner."}
+{"aid": "a006", "verdict": "wrong", "type": "existence", "evidence": "build.gradle applies org.revapi.revapi-gradle-plugin whose task is `revapi`; no gradle file defines revApiCheck."}
+{"aid": "a007", "verdict": "wrong", "type": "existence", "evidence": "No versions.props is tracked anywhere; dependency versions are in gradle/libs.versions.toml."}
+{"aid": "a008", "verdict": "wrong", "type": "behaviour", "evidence": "No pre-commit config or git hook setup exists; the license header is enforced by the Spotless Gradle plugin (licenseHeaderFile in baseline.gradle) via spotlessCheck."}
+{"aid": "a009", "verdict": "correct", "type": "existence", "evidence": "bin/fmt exists at the repo root and does run `go fmt -C go ./...` (plus other formatters), so the repo-root-relative reference is accurate enough."}
+{"aid": "a010", "verdict": "wrong", "type": "behaviour", "evidence": "Root package.json test script is `vitest run` at root and code/package.json has no test script, so it does not delegate to code/."}
+{"aid": "a011", "verdict": "wrong", "type": "existence", "evidence": "code/vitest.workspace.ts does not exist; config is root vitest.config.ts plus code/vitest.shared.ts etc."}
+{"aid": "a012", "verdict": "wrong", "type": "existence", "evidence": "code/vitest.workspace.ts does not exist at HEAD."}
+{"aid": "a013", "verdict": "wrong", "type": "existence", "evidence": "code/package.json defines no `test` script (only root does), so `yarn --cwd code test` fails."}
+{"aid": "a014", "verdict": "wrong", "type": "existence", "evidence": ".vscode/ contains only extensions.json, launch.json and settings.json; no tasks.json defines the named tasks."}
+{"aid": "a015", "verdict": "correct", "type": "existence", "evidence": "fmt:write is defined only in the root workspace, but Yarn 4 runs colon-containing scripts from any workspace when exactly one workspace defines them, so `cd code && yarn fmt:write` works."}
+{"aid": "a016", "verdict": "correct", "type": "existence", "evidence": "The file .github/instructions/runner-settings-ui.instructions.md exists at the repo-root path shown; only the markdown link resolution is off, which would not mislead an agent."}
+{"aid": "a017", "verdict": "correct", "type": "existence", "evidence": "The file .github/instructions/common-libraries.instructions.md exists at the repo-root path shown; only the markdown link resolution is off."}
+{"aid": "a018", "verdict": "wrong", "type": "behaviour", "evidence": "Root lint script is `biome lint api internals packages test utils`; no ESLint dependency or config is present."}
+{"aid": "a019", "verdict": "wrong", "type": "behaviour", "evidence": "Linting uses Biome (biome.jsonc, @biomejs/biome, lint-staged biome lint); no ESLint config is tracked at root."}
+{"aid": "a020", "verdict": "wrong", "type": "behaviour", "evidence": "Unused vars are enforced by Biome's noUnusedVariables in biome.jsonc; typescript-eslint is not used."}

@@ -1,0 +1,65 @@
+name: ctxlint
+description: Find claims in CLAUDE.md, AGENTS.md and Cursor/Copilot rules that no longer match the repo
+branding:
+  icon: check-square
+  color: orange
+inputs:
+  anthropic-api-key:
+    description: Optional. Enables the review stage. Without it, only high-confidence findings are reported.
+    required: false
+    default: ""
+  model:
+    description: Model for the review stage (leave empty for the default)
+    required: false
+    default: ""
+  changed-only:
+    description: On pull requests, only report instruction files affected by the PR's changes
+    required: false
+    default: "true"
+  fail-on-issues:
+    description: Fail the check when issues are found
+    required: false
+    default: "false"
+  sarif-file:
+    description: Also write SARIF to this path (upload it with github/codeql-action/upload-sarif)
+    required: false
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Run ctxlint
+      shell: bash
+      env:
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        INPUT_MODEL: ${{ inputs.model }}
+        INPUT_CHANGED_ONLY: ${{ inputs.changed-only }}
+        INPUT_FAIL: ${{ inputs.fail-on-issues }}
+        INPUT_SARIF: ${{ inputs.sarif-file }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        ACTION_PATH: ${{ github.action_path }}
+        WORKSPACE: ${{ github.workspace }}
+        CTXLINT_CACHE_DIR: ${{ runner.temp }}/ctxlint-cache
+      run: |
+        set -uo pipefail
+        args=("$WORKSPACE" --format github)
+        if [ -n "$INPUT_MODEL" ]; then args+=(--model "$INPUT_MODEL"); fi
+        if [ "$INPUT_CHANGED_ONLY" = "true" ] && [ -n "${BASE_SHA:-}" ]; then
+          if git -C "$WORKSPACE" cat-file -e "$BASE_SHA" 2>/dev/null || git -C "$WORKSPACE" fetch -q --depth=1 origin "$BASE_SHA"; then
+            args+=(--changed "$BASE_SHA")
+          else
+            echo "::notice::ctxlint: base commit not available; checking all instruction files"
+          fi
+        fi
+        python3 "$ACTION_PATH/ctxlint.py" "${args[@]}"
+        code=$?
+        if [ -n "$INPUT_SARIF" ]; then
+          sarif_args=("${args[@]}")
+          sarif_args[2]=sarif
+          python3 "$ACTION_PATH/ctxlint.py" "${sarif_args[@]}" > "$INPUT_SARIF" || true
+        fi
+        if [ "$code" -ge 2 ]; then
+          echo "::error::ctxlint failed to run (exit $code)"
+          exit "$code"
+        fi
+        if [ "$INPUT_FAIL" = "true" ]; then exit "$code"; fi
+        exit 0
