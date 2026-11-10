@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "check-agent-docs"
-version = "0.6.0"
+dynamic = ["version"]
 description = "Find claims in CLAUDE.md, AGENTS.md and Cursor/Copilot rules that no longer match your repo"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -22,3 +22,6 @@ check-agent-docs = "check_agent_docs:main_entry"
 
 [tool.setuptools]
 py-modules = ["check_agent_docs"]
+
+[tool.setuptools.dynamic]
+version = { attr = "check_agent_docs.VERSION" }

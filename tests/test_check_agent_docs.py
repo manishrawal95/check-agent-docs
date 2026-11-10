@@ -912,3 +912,19 @@ class SessionReview(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OneVersion(unittest.TestCase):
+    """VERSION in check_agent_docs.py is the one home; pyproject reads it and plugin.json must match it."""
+
+    def test_pyproject_reads_version_from_module(self):
+        text = (HERE.parent / "pyproject.toml").read_text(encoding="utf-8")
+        self.assertIn('dynamic = ["version"]', text)
+        self.assertIn('version = { attr = "check_agent_docs.VERSION" }', text)
+        self.assertNotRegex(text, r'(?m)^version\s*=\s*"')
+
+    def test_plugin_manifest_matches_version(self):
+        manifest = json.loads((HERE.parent / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["version"], check_agent_docs.VERSION,
+                         ".claude-plugin/plugin.json version differs from VERSION in check_agent_docs.py; set it to "
+                         "match when bumping")

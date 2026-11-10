@@ -30,7 +30,7 @@ claude plugin validate .                       # plugin manifest, skill, agent a
 1. **Every behaviour change gets a test** in `tests/test_check_agent_docs.py` that builds a repo showing the case.
 2. **Precision before recall.** A false report costs users more than a miss: each false alarm teaches them to ignore the tool.
 3. **Never let the review contradict a verified fact.** `review_issues` drops claims about paths that exist. Keep that, and extend it rather than loosening it.
-4. **Bump `PROMPT_VERSION`** whenever `REVIEW_INSTRUCTIONS` or the packet format changes (it is part of the cache key). Bump `VERSION` in `check_agent_docs.py`, `pyproject.toml` and `.claude-plugin/plugin.json` together.
+4. **Bump `PROMPT_VERSION`** whenever `REVIEW_INSTRUCTIONS` or the packet format changes (it is part of the cache key). Bump `VERSION` in `check_agent_docs.py` (the one home; `pyproject.toml` reads it) and set `.claude-plugin/plugin.json` to match: the tests fail when they differ.
 5. **No new dependencies.** It must stay a single file people can drop into CI.
 6. **Don't claim an improvement without a fresh round.** Dev checks on already-seen repos have fooled us twice: round 4's 89% facts-only became 57% on round 5. See `eval/README.md`.
 7. **Never post findings on other people's repos** (issues, PRs, comments) without the maintainer's explicit permission.
